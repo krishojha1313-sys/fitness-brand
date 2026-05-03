@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0A0A0A;
+  color: #FFFFFF;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00D9FF;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00FF88;
+}
+
+/* Text gradient */
+.text-gradient {
+  @apply bg-gradient-to-r from-brand-blue via-brand-white to-brand-green bg-clip-text text-transparent;
+}
+
+.text-gradient-red {
+  @apply bg-gradient-to-r from-brand-red to-brand-blue bg-clip-text text-transparent;
+}
+
+/* Neon glow effects */
+.glow-blue {
+  @apply shadow-neon-blue;
+}
+
+.glow-green {
+  @apply shadow-neon-green;
+}
+
+.glow-red {
+  @apply shadow-neon-red;
+}
+
+/* Smooth transitions */
+.smooth {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+/* Glass morphism */
+.glass {
+  @apply backdrop-blur-xl bg-white/10 border border-white/20;
+}
+
+/* Button base */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-brand-blue to-brand-green rounded-lg font-bold text-brand-black hover:shadow-neon-blue smooth;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-brand-blue rounded-lg font-bold text-brand-blue hover:bg-brand-blue/10 smooth;
+}
+
+/* Hero gradient background */
+.hero-gradient {
+  @apply bg-gradient-to-b from-brand-charcoal via-brand-black to-brand-black;
+}
+
+/* Animation keyframes */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+  background-size: 1000px 100%;
+}
+
+/* Stats counter */
+.counter {
+  @apply font-bold text-3xl md:text-4xl text-gradient;
+}
